@@ -29,8 +29,10 @@
                 <div class="box2"><div class="colorpoint" style="border: 4px solid rgb(236, 91, 193);"></div><strong style="display:block ;">shopping</strong>2 tasks</div>
                 <div class="box2righ"><div class="colorpoint" style="border: 4px solid rgb(224, 8, 109);"></div><strong style="display:block ;">Health</strong>2 tasks</div>
             </div>
-            <div>
-                <div>
+            <div id="times">
+                
+                
+                <!-- <div>
                     <section style="display: flex ; margin-top: 10px;" >
                         <div style="flex:1;">08:00</div>
                         <div style="flex:4; margin-top: 8px ; border-top: 2px solid rgb(192, 186, 186) ;"></div>
@@ -48,10 +50,36 @@
                     <p>11:00</p>
                     <p>11:30</p>
                     <p>12:00</p>
-                </div>
+                </div> -->
             </div>
         </main>
         </div>
+        <script>
+         let inputs = JSON.parse(localStorage.getItem ("object"))
+         console.log (inputs)
+         let time = ["08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30"]
+            
+
+         for (let i=0 ; i<24 ; i=++i){
+            let tim = document.getElementById("times");
+            let div = document.createElement ("div");
+            console.log(inputs[i]?.tim.slice(0,5));
+            const currentTask = inputs.find(item => item.tim.slice(0,5)===time[i] )
+            console.log(currentTask)
+            
+            div.innerHTML=`<div style="display: flex; margin-top: 5px;">
+                    <div style="flex: 1;" >${time[i]}</div>
+                    ${currentTask? `<div style="flex: 5; background-color: aqua;" >
+
+                    <div><b> ${currentTask.tit}</b></div>
+                    ${currentTask.discr}</div>` : ""  }
+                </div>`
+            tim.appendChild(div);
+
+         }
+      
+        
+    </script>
 </body>
 </html>
 

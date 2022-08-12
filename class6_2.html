@@ -8,10 +8,11 @@
     <link href="class6.css" rel="stylesheet" />
 </head>
 <body>
+    <form action="" onsubmit="handelsubmit(event)">
     <div class="maiin" >
         <header>
             <img src="arrow-left.png" alt="plus" width="15px" height="20px" class="imgflash">
-            <input type="Add task" value="Add task" style="border: 0px ; width: 100%; height: 40px; margin: 25px 0px ; font-size: 25px; color: rgb(121, 113, 103);">
+            <input type="Add task" id="tas" placeholder="Add task" style="border: 0px ; width: 100%; height: 40px; margin: 25px 0px ; font-size: 25px; color: rgb(121, 113, 103);">
         </header>
         <main style="padding-left:50px ;">
             <div style="margin:20px 0px 10px 0px;">choose data</div>
@@ -20,33 +21,65 @@
                 <option value="2">20 septamber</option>
                 <option value="3">10 jon</option>
             </select> -->
-            <input type="date" dir="rtl" style="width: 50%; border: 0px;">
+            <input type="date" dir="rtl" id="dat" style="width: 50%; border: 0px;">
             <div style="margin:30px 0px 10px 0px;">choose time</div>
             <select name="time" id="tim" style="width: 50%; border: 0px;">
-                <option value="1" >12:00-13:00</option>
-                <option value="2">13:00-14:00 </option>
-                <option value="2">14:00-15:00 </option>
-                <option value="3">15:00-16:00 </option>
+                <option value="12:00-13:00" >12:00-13:00</option>
+                <option value="13:00-14:00">13:00-14:00 </option>
+                <option value="14:00-15:00">14:00-15:00 </option>
+                <option value="15:00-16:00">15:00-16:00 </option>
             </select>
             <section style="margin-top: 40px;">
                 <div>
-                <label for="wor" class="work" style="background-color: rgb(62, 62, 226);" >work</label>
-                <input type="radio" id="wor" style="appearance: none; ">
-                <label for="per" class="work" style="background-color: rgb(38, 156, 131);" >personal</label>
-                <input type="radio" id="per" style="appearance: none; ">
-                <label for="sho" class="work" style="background-color: rgb(197, 58, 174);" >shopping</label>
-                <input type="radio" id="sho" style="appearance: none; ">
+                <label for="wor" class="work" style="background-color: rgb(62, 62, 226);" >
+                <input type="radio" id="wor" value="work" onchange="withjs(this)" style="appearance: none; ">work</label>
+                <label for="per" class="work" style="background-color: rgb(38, 156, 131);" >
+                <input type="radio" id="per" value="personal" onchange="withjs(this)" style="appearance: none; ">personal</label>
+                <label for="sho" class="work" style="background-color: rgb(197, 58, 174);" >
+                <input type="radio" id="sho" value="shopping" onchange="withjs(this)" style="appearance: none; ">shopping</label>
             </div>
             <div style="margin-top: 30px;">
-                <label for="Hilth" class="work" style="background-color: rgb(216, 43, 30);" >Health</label>
-                <input type="radio" id="Hilth" style="appearance: none; ">
-                <label for="Hilth" class="work" style="background-color: rgb(55, 32, 158);" >others</label>
-                <input type="radio" id="Hilth" style="appearance: none; ">
+                <label for="Hilth" class="work" style="background-color: rgb(216, 43, 30);" >
+                <input type="radio" id="Hilth" value="Health" onchange="withjs(this)" style="appearance: none; ">Health</label>
+                <label for="oth" class="work" style="background-color: rgb(55, 32, 158);" >
+                <input type="radio" id="oth" value="others" onchange="withjs(this)" style="appearance: none; ">others</label>
             </div>
             </section>
             <div style="margin:30px 0px 10px 0px;">Write discription:</div>
-            <textarea name="" id="" cols="30" rows="10" style="color:rgb(121, 115, 115) ; border: 0px;">Discription</textarea>
+            <textarea name="" id="text" cols="30" rows="10" style="color:rgb(121, 115, 115) ; border: 0px;">Discription</textarea>
+            <input type="submit" value="add task" id="sub"> 
+ 
         </main>
     </div>
+    
+    </form>
+    <script>
+        const fiveinput={};
+        let inpp3;
+
+        function withjs(w){
+            inpp4=w.value
+        }
+
+        function handelsubmit(event){
+           event.preventDefault();
+           let inp1=document.getElementById("tas").value;
+             fiveinput.tit=inp1
+           let inp2=document.getElementById("dat").value;
+             fiveinput.dat=inp2
+            let inp3=document.getElementById("tim").value;
+              fiveinput.tim=inp3
+            
+            fiveinput.do=inpp4
+            let inp5=document.getElementById("text").value;
+            fiveinput.discr=inp5
+            console.log (fiveinput);
+            const tasArr = JSON.parse(localStorage.getItem("object") || '[]')
+            console.log(tasArr)
+            tasArr.push(fiveinput);
+            localStorage.setItem("object",JSON.stringify(tasArr) );
+        }
+        
+    </script>
 </body>
 </html>
