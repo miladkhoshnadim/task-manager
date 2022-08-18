@@ -11,68 +11,124 @@
     <div class="maiin" >
         <header>
             <div style="margin:30px 5px 20px 5px;">
-            <img src="close.png" alt="plus" width="15px" height="15px" class="imgclose" style="margin-right:5px ;">
-            <input type="Add task" value="search task" style="border: 0px ; width: 80%; height: 40px ; font-size: 25px; color: rgb(121, 113, 103);">
-            <img src="search.png" alt="plus" width="20px" height="25px" class="imgserch" style="margin-left:5px ;">
+                <a id="felash" href="file:///F:/java/JS/w6/class6.html">
+                    <img src="arrow-left.png" alt="plus" width="10px" height="15px" class="imgclose" style="margin-right:5px ;">
+                </a>
+                <a id="zarb" href="file:///F:/java/JS/w6/class6-3.html" style=" visibility: hidden;">
+                    <img src="close.png"  alt="plus" width="15px" height="15px" class="imgclose" style="margin-right:5px ;">
+                </a>
+            <input type="search" onkeyup="searching()" id="serc" placeholder="search task" style="border: 0px ; width: 75%; height: 40px ; font-size: 25px; color: rgb(121, 113, 103);">
+            <img src="search.png" alt="plus" width="20px" height="25px" style="margin-left:5px ;">
+            <datalist >
+
+            </datalist>
             </div>
         </header>
-        <main>
-            <div style="display: flex ; position: relative; border-top: 1px solid rgb(230, 233, 235);">
+        <main id="elem">
+            <!-- <div class="imgserch" style="display: flex ; position: relative; border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(233, 65, 53); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">Do yoga</strong>15 minutes </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">Do yoga</strong>15 minutes </div>
             </div>
-            <div style="display: flex ; position: relative; margin-top: 15px; border-top: 1px solid rgb(230, 233, 235);">
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px; border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(245, 81, 5); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">Do yoga</strong>15 minutes </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">Do yoga</strong>15 minutes </div>
             </div>
-            <div style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(98, 57, 175); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">go shopping</strong>bread </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px"  style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">go shopping</strong>bread </div>
             </div>
-            <div style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(98, 57, 175); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">go shopping</strong>bananas </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">go shopping</strong>bananas </div>
             </div>
-            <div style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(98, 57, 175); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">Meeting</strong>bananas </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">Meeting</strong>bananas </div>
             </div>
-            <div style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(98, 57, 175); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">Running</strong>bananas </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">Running</strong>bananas </div>
             </div>
-            <div style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(98, 57, 175); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">Meeting</strong>bananas </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">Meeting</strong>bananas </div>
             </div>
-            <div style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(98, 57, 175); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">Lunch</strong>bananas </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;"  ><strong style=" display:block;">Lunch</strong>bananas </div>
             </div>
-            <div style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(98, 57, 175); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">Do yoga</strong>bananas </div>
-            </div>
-            <div style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">Do yoga</strong>bananas </div>
+            </div> 
+            <div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div class="colorpoint" style="border: 4px solid rgb(98, 57, 175); margin-left: 90%;"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" class="imgserch" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;"><strong style=" display:block;">Shopping</strong>bananas </div>
-            </div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;">Shopping</strong>bananas </div>
+            </div> -->
         </main>
     </div>
-    <!-- <script>
-        JSON.parse()
-        JSON.stringify()
-        localStorage.setItem ("name", "milad")
-    </script> -->
+
+
+    <script>
+        
+        /// --------------------------section of serch
+    function searching() {
+    let input = document.getElementById('serc').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('imgserch');
+    document.getElementById('felash').style.visibility='hidden';  
+    document.getElementById('zarb').style.visibility='visible'; 
+
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="flex";                 
+        }
+    }
+    }
+
+    ////------------------------section hadel of icons
+
+    let inputs = JSON.parse(localStorage.getItem ("object"))
+         console.log (inputs)  
+
+    for (let i=0 ; i<inputs.length ; i=++i){
+        let tim = document.getElementById("elem");
+            let div = document.createElement ("div");
+        
+            //set color pont
+            
+            if (inputs[i].do == "work"){
+                stylee = "border: 4px solid rgb(145, 94, 238); margin-left: 280px;"
+            } else if (inputs[i].do == "shopping"){
+                stylee = "border: 4px solid rgb(236, 91, 193);margin-left: 280px;"
+            }else if (inputs[i].do == "personal"){
+                stylee = "border: 4px solid rgb(24, 155, 68);margin-left: 280px;"
+            }else if (inputs[i].do == "Health"){
+                stylee = "border: 4px solid rgb(224, 8, 109);margin-left: 280px;"
+            }
+    
+            div.innerHTML=`<div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+                <div class="colorpoint" style="${stylee}"></div>
+                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
+                <div style="flex:8 ;" ><strong style=" display:block;"> ${inputs[i].tit}</strong>${inputs[i].discr} </div>
+            </div>`
+            tim.appendChild(div);
+    }
+    
+
+    </script> 
 </body>
 </html>
