@@ -61,3 +61,7 @@ body {
 input[type="date"]::-webkit-calendar-picker-indicator{
     background: rgb(248, 247, 246); 
 }
+
+.disp{
+    display: flex;
+}

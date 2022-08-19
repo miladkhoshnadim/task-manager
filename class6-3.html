@@ -121,13 +121,34 @@
             }
     
             div.innerHTML=`<div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
-                <div class="colorpoint" style="${stylee}"></div>
-                <img src="edit.png" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;">
-                <div style="flex:8 ;" ><strong style=" display:block;"> ${inputs[i].tit}</strong>${inputs[i].discr} </div>
+                <div id="ed${[i]}"><div class="colorpoint" style="${stylee}"></div>
+                <img src="edit.png" id="ed${[i]}" onclick="edit(id)" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;"></div>
+                <div  style="flex:8 ;" ><strong style=" display:block;"> ${inputs[i].tit}</strong>${inputs[i].discr} </div>
+                <div id="ed" style=" display: none; flex:1 ; background-color: red;"><img src="trash.png" alt="" width="17px" height="20px" style="padding:10px ;"></div>
             </div>`
             tim.appendChild(div);
     }
     
+    /////////////////////////////reciclbin editebl////////////////
+
+    // document.getElementById('ed').addEventListener('click' , (event) => {
+
+        
+    // });
+     
+    function edit(id) {
+        // console.log(id)
+        // console.log("hello")
+        document.getElementById(id).style.display='none';
+        document.getElementById('ed').style.display='flex';
+        
+        
+
+
+        // let divv = document.createElement ("div");
+        // divv.innerHTML=``;
+        //  document.getElementById(id).appendChild(divv); 
+    }
 
     </script> 
 </body>
