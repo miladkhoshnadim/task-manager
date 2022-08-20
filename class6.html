@@ -20,9 +20,9 @@
         <main>
             <div style="display: flex ; border-bottom: 1px solid rgb(202, 198, 198);">
                 <a href="file:///F:/java/JS/w6/class6-3.html">
-                <p  class="box1"><strong style="display:block ;">16</strong>tasksCreated</p> 
+                <p  class="box1"><strong id="bo" style="display:block ;"></strong>tasksCreated</p> 
                 </a>
-                <p class="box1"><strong id="bo" style="display:block ;"></strong>tasks lefted</p>
+                <p class="box1"><strong id="taslef" style="display:block ;"></strong>tasks lefted</p>
                
             </div>
             <div style="display: flex ; margin-top: 10px; position: relative ;">
@@ -72,7 +72,7 @@
         </div>
         <script>
 
-         let inputs = JSON.parse(localStorage.getItem ("object"))
+        let inputs = JSON.parse(localStorage.getItem ("object"))
          console.log (inputs)  
 
         let divh = document.createElement ("div");
@@ -82,6 +82,12 @@
         let divt = document.createElement ("div");
         divt.innerHTML=`${inputs.length}`;
         document.getElementById("bo").appendChild(divt);
+
+        let cunterRemov=(JSON.parse(localStorage.getItem ("cunterremove") ) || 0);
+        let rvt = document.createElement ("div");
+        rvt.innerHTML=`${cunterRemov}`;
+        document.getElementById("taslef").appendChild(rvt);
+        
 
         let cuntwo=0 , cuntsh=0 ,cunthea=0 , cuntpers =0 ;
         for (let i=0 ; i<inputs.length ; i=++i){

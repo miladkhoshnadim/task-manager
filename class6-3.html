@@ -100,9 +100,10 @@
     }
 
     ////------------------------section hadel of icons
-
+    items();
+    function items(){
     let inputs = JSON.parse(localStorage.getItem ("object"))
-         console.log (inputs)  
+        // console.log (inputs)  
 
     for (let i=0 ; i<inputs.length ; i=++i){
         let tim = document.getElementById("elem");
@@ -120,35 +121,69 @@
                 stylee = "border: 4px solid rgb(224, 8, 109);margin-left: 280px;"
             }
     
-            div.innerHTML=`<div class="imgserch" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
+            div.innerHTML=`<div class="imgserch" id="ied${[i]}" style="display: flex ; position: relative; margin-top: 15px;border-top: 1px solid rgb(230, 233, 235);">
                 <div id="ed${[i]}"><div class="colorpoint" style="${stylee}"></div>
                 <img src="edit.png" id="ed${[i]}" onclick="edit(id)" alt="plus" width="20px" height="25px" style="flex:1 ; margin:5px 10px ;"></div>
                 <div  style="flex:8 ;" ><strong style=" display:block;"> ${inputs[i].tit}</strong>${inputs[i].discr} </div>
-                <div id="ed" style=" display: none; flex:1 ; background-color: red;"><img src="trash.png" alt="" width="17px" height="20px" style="padding:10px ;"></div>
+                <div id="eed${[i]}" onclick="remove(id)" style=" display: none; flex:1 ; background-color: red;">
+                    <a href="file:///F:/java/JS/w6/class6-3.html">
+                    <img src="trash.png" alt="" width="17px" height="20px" style="padding:10px ;"></a></div>
             </div>`
             tim.appendChild(div);
     }
-    
+    }
     /////////////////////////////reciclbin editebl////////////////
 
     // document.getElementById('ed').addEventListener('click' , (event) => {
 
         
     // });
-     
+    let iid="ed0"
+
     function edit(id) {
-        // console.log(id)
+        //console.log(id)
         // console.log("hello")
-        document.getElementById(id).style.display='none';
-        document.getElementById('ed').style.display='flex';
+         if (iid == id ){
+            document.getElementById(id).style.display='none';
+            document.getElementById(`e${id}`).style.display='flex';
+            document.getElementById(`i${id}`).classList.add('disp');
+         } else if (iid !== id ){
+            document.getElementById(id).style.display='none';
+            document.getElementById(`e${id}`).style.display='flex';
+            document.getElementById(`i${id}`).classList.add('disp');
+            document.getElementById(iid).style.display='flex';
+            document.getElementById(`e${iid}`).style.display='none'; 
+            document.getElementById(`i${iid}`).classList.remove('disp');
+         }
         
         
-
-
+         iid = id  
         // let divv = document.createElement ("div");
         // divv.innerHTML=``;
         //  document.getElementById(id).appendChild(divv); 
     }
+
+/////////////////////////////////////////////////section remove//////////
+
+    let str='';
+    //let cuntremove =0;
+    function remove(id){
+        str =+(id.substring(3, id.length));
+        //console.log(str);
+        //document.getElementById(`i${id}`)
+        let inputs = JSON.parse(localStorage.getItem ("object"))
+        //console.log(inputs);
+        inputs.splice(str, 1);
+        //console.log(inputs);
+        localStorage.setItem("object",JSON.stringify(inputs) );
+        //items();
+        //cuntremove =cuntremove +1;
+        //console.log("inputs");
+        //console.log(cuntremove);
+        let cuntremove = JSON.parse(localStorage.getItem("cunterremove") || 0 )
+        localStorage.setItem("cunterremove",++cuntremove );
+    }
+   
 
     </script> 
 </body>
